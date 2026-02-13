@@ -1,0 +1,446 @@
+/* ================================================
+   PORTFOLIO WEBSITE - CUSTOM STYLES
+   ================================================
+   Bootstrap provides the foundation.
+   We customize it here to make it unique! */
+
+/* ================================================
+   1. CSS VARIABLES - Easy theme management
+   ================================================ */
+
+:root {
+    /* Primary brand colors */
+    --primary-color: #0d6efd;        /* Bootstrap primary blue */
+    --primary-dark: #0a58ca;         /* Darker shade for hover */
+    --accent-color: #0dcaf0;         /* Cyan accent */
+    
+    /* Text colors */
+    --text-dark: #212529;            /* Dark text */
+    --text-light: #6c757d;           /* Gray text */
+    
+    /* Background colors */
+    --bg-dark: #212529;              /* Dark sections */
+    --bg-light: #f8f9fa;             /* Light sections */
+    
+    /* Spacing & sizing */
+    --spacing-unit: 1rem;
+    --border-radius: 0.5rem;
+}
+
+/* ================================================
+   2. GLOBAL STYLES
+   ================================================ */
+
+* {
+    /* This resets default margins and padding */
+    margin: 0;
+    padding: 0;
+    /* This makes box sizing easier */
+    box-sizing: border-box;
+}
+
+html {
+    /* Smooth scrolling when clicking anchor links */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Fallback fonts if primary doesn't load */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Line height for better readability */
+    line-height: 1.6;
+    /* Default text color */
+    color: var(--text-dark);
+}
+
+/* ================================================
+   3. HERO SECTION - The big welcome banner
+   ================================================ */
+
+.hero-section {
+    /* Gradient background */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    
+    /* Text color */
+    color: white;
+    
+    /* Height and centering */
+    height: 100vh;  /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Make text white */
+    color: white;
+}
+
+/* Style the main heading in hero */
+.hero-section h1 {
+    /* Add text shadow for depth */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Font weight */
+    font-weight: 800;
+}
+
+/* Style hero buttons */
+.hero-section .btn {
+    /* Add some padding */
+    padding: 12px 30px;
+    
+    /* Smooth transitions on hover */
+    transition: all 0.3s ease;
+    
+    /* Font weight */
+    font-weight: 600;
+}
+
+/* Hover effect for buttons */
+.hero-section .btn:hover {
+    /* Move button up slightly */
+    transform: translateY(-3px);
+    
+    /* Add subtle shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================================
+   4. NAVIGATION BAR CUSTOMIZATION
+   ================================================ */
+
+.navbar {
+    /* Shadow under navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style navbar links on hover */
+.navbar-nav .nav-link {
+    /* Smooth color transition */
+    transition: color 0.3s ease;
+    
+    /* Add padding */
+    margin-right: 0.5rem;
+}
+
+/* When you hover over a nav link */
+.navbar-nav .nav-link:hover {
+    /* Change color */
+    color: var(--accent-color) !important;
+    
+    /* Underline effect */
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Active link styling */
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+}
+
+/* ================================================
+   5. PROJECT CARDS - Make them stand out
+   ================================================ */
+
+.project-card {
+    /* Smooth transition on hover */
+    transition: all 0.3s ease;
+    
+    /* Subtle shadow */
+    border: none;
+}
+
+/* When you hover on a project card */
+.project-card:hover {
+    /* Move card up */
+    transform: translateY(-10px);
+    
+    /* Bigger shadow */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+    
+    /* Slight scale up */
+}
+
+/* Style the card image */
+.project-card img {
+    /* Height of image */
+    height: 250px;
+    
+    /* Make it look nice when scaled */
+    object-fit: cover;
+    
+    /* Transition for hover effect */
+    transition: transform 0.3s ease;
+}
+
+/* When you hover, zoom the image slightly */
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ================================================
+   6. SECTION SPACING & STYLING
+   ================================================ */
+
+/* All sections get nice padding */
+section {
+    padding: 60px 0;
+}
+
+/* Section headings */
+section h2 {
+    /* Color and weight */
+    color: var(--text-dark);
+    font-weight: 700;
+    
+    /* Add a nice underline effect */
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+/* Underline for section headings */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* ================================================
+   7. CARDS & COMPONENTS
+   ================================================ */
+
+.card {
+    /* Smooth border */
+    border: none;
+    
+    /* Subtle shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    /* Transition for hover */
+    transition: all 0.3s ease;
+    
+    /* Rounded corners */
+    border-radius: var(--border-radius);
+}
+
+/* Hover effect for cards */
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* ================================================
+   8. BADGES (Skill tags)
+   ================================================ */
+
+.badge {
+    /* Padding for breathing room */
+    padding: 8px 12px;
+    
+    /* Font size */
+    font-size: 0.85rem;
+    
+    /* Smooth transition */
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    /* Slightly bigger on hover */
+    transform: scale(1.1);
+}
+
+/* ================================================
+   9. FORM STYLES
+   ================================================ */
+
+.form-control {
+    /* Border color */
+    border-color: #e9ecef;
+    
+    /* Smooth transition */
+    transition: all 0.3s ease;
+    
+    /* Padding */
+    padding: 12px 15px;
+    
+    /* Border width */
+    border: 2px solid #e9ecef;
+}
+
+/* When form input is focused (user clicks on it) */
+.form-control:focus {
+    /* Change border color */
+    border-color: var(--primary-color);
+    
+    /* Add glow effect */
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    
+    /* Remove default outline */
+    outline: none;
+}
+
+/* Form button */
+.btn-primary {
+    /* Background color */
+    background-color: var(--primary-color);
+    
+    /* Border */
+    border: none;
+    
+    /* Smooth transition */
+    transition: all 0.3s ease;
+    
+    /* Font weight */
+    font-weight: 600;
+}
+
+/* Button hover */
+.btn-primary:hover {
+    /* Darker color */
+    background-color: var(--primary-dark);
+    
+    /* Move up slightly */
+    transform: translateY(-2px);
+    
+    /* Add shadow */
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* ================================================
+   10. SOCIAL BUTTONS
+   ================================================ */
+
+.btn-circle {
+    /* Width and height */
+    width: 50px;
+    height: 50px;
+    
+    /* Center the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Make it a circle */
+    border-radius: 50%;
+    
+    /* Smooth transition */
+    transition: all 0.3s ease;
+    
+    /* Remove padding */
+    padding: 0;
+}
+
+/* Hover effect for social buttons */
+.btn-circle:hover {
+    /* Transform to circle */
+    background-color: var(--primary-color);
+    color: white;
+    
+    /* Move up and scale */
+    transform: translateY(-5px) scale(1.1);
+    
+    /* Shadow */
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+}
+
+/* ================================================
+   11. ANIMATIONS
+   ================================================ */
+
+/* Define animation for elements loading */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to hero heading */
+.animate-on-load {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* ================================================
+   12. RESPONSIVE DESIGN - Mobile First
+   ================================================ */
+
+/* Tablets (768px and up) */
+@media (max-width: 768px) {
+    /* Make hero section smaller on mobile */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    /* Stack buttons vertically on mobile */
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    /* Reduce padding on mobile */
+    section {
+        padding: 40px 0;
+    }
+}
+
+/* Small phones (480px and down) */
+@media (max-width: 480px) {
+    /* Even smaller heading on small phones */
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* Smaller padding */
+    section {
+        padding: 30px 0;
+    }
+    
+    /* Smaller cards */
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* ================================================
+   13. UTILITY CLASSES - Extra help
+   ================================================ */
+
+/* For spacing */
+.mt-5 {
+    margin-top: 3rem;
+}
+
+/* For text alignment */
+.text-center {
+    text-align: center;
+}
+
+/* ================================================
+   14. FOOTER
+   ================================================ */
+
+footer {
+    /* Dark background */
+    background-color: var(--bg-dark);
+    
+    /* White text */
+    color: white;
+    
+    /* Margin from content */
+    margin-top: 60px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
