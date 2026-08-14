@@ -24,8 +24,26 @@ const projects = [
         id: 1,
         title: 'E-Commerce Product Page',
         description: 'A responsive product page with image gallery, reviews, and add-to-cart functionality. Built with HTML, CSS, and JavaScript.',
-        image: 'https://via.placeholder.com/400x250?text=E-Commerce+Store',
+        image: 'https://via.placeholder.com/400x250?text=E-Commerce+Store',/
         technologies: ['HTML5', 'CSS3', 'JavaScript'],
+        const imageInput = document.getElementById('imageInput');
+const preview = document.getElementById('preview');
+
+imageInput.addEventListener('change', function() {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result; // Set image source to file data
+            preview.style.display = 'block';
+        }
+
+        reader.readAsDataURL(file); // Convert file to base64 string
+    }
+});
+
         codeLink: '#',
         demoLink: '#'
     },
@@ -34,6 +52,24 @@ const projects = [
         title: 'Weather App',
         description: 'Real-time weather application that fetches data from an API. Shows temperature, humidity, and 5-day forecast with beautiful UI.',
         image: 'https://via.placeholder.com/400x250?text=Weather+App',
+        const imageInput = document.getElementById('imageInput');
+const preview = document.getElementById('preview');
+
+imageInput.addEventListener('change', function() {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result; // Set image source to file data
+            preview.style.display = 'block';
+        }
+
+        reader.readAsDataURL(file); // Convert file to base64 string
+    }
+});
+
         technologies: ['HTML5', 'CSS3', 'JavaScript'],
         codeLink: '#',
         demoLink: '#'
